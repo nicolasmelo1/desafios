@@ -9,7 +9,7 @@ class MrCrawley:
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:64.0) Gecko/20100101 Firefox/64.0'
         }
 
-    def extract_data(self, subreddit, minimum_score):
+    def __extract_data(self, subreddit, minimum_score):
         """
         Extracts data from the first page of reddit or subreddit and append it to a list
         If subreddit is 'reddit_home' retrieve threads from reddit home page
@@ -59,7 +59,7 @@ Comentários: {3}
 Thread: {4}
     '''
         for subreddit in subreddits:
-            crawler_response = self.extract_data(subreddit, minimum_score)
+            crawler_response = self.__extract_data(subreddit, minimum_score)
             for data in crawler_response:
                 response = response + result.format(data['title'], data['upvotes'], data['subreddit'], data['comments'],
                                                     data['thread'])
