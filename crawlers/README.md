@@ -34,17 +34,24 @@ pip install -r requirements.txt
 ## Rodando o Script
 Tudo funciona através de um único arquivo, então tenha em mente os seguintes comandos
 
+__Comandos__:
++ `--mine "<str>"` Use esse comando para descobrir o que está bombando nos subreddits de sua escolha, separados por `;` e entre `"`
++ `--set <int>` _Opcional_: Use esse comando para setar o número minimo de _upvotes_
++ `--telegram` _Opcional_: Ignora os demais comandos caso existam e inicializa o bot to telegram.
+
 __Dica__:
  + Use `reddit_home` para descobrir o que está bombando na página principal do reddit
  + Se você não setar um número minimo de upvotes, o valor padrão é `5000`
 ### Terminal
 Exemplo:
 ```
-$ python3 main_crawlers.py --mine "cats;worldnews" --set 5000
+$ python3 main_crawlers.py --mine "cats;worldnews"
 ```
-__Comandos__:
-+ `--mine "<str>"` Use esse comando para descobrir o que está bombando nos subreddits de sua escolha, separados por `;` e entre `"`
-+ `--set <int>` _Opicional_: Use esse comando para setar o número minimo de _upvotes_
+ou, para retornar as principais threads com pelo menos 3000 upvotes, use:
+```
+$ python3 main_crawlers.py --mine "cats;worldnews" --set 3000
+```
+
 
 P.S.: `reddit_home` refere-se a página inicial do reddit. 
 
