@@ -1,5 +1,5 @@
 from argparse import ArgumentParser
-from .magic_formatter import MagicFormatter
+from magic_formatter import MagicFormatter
 
 if __name__ == '__main__':
     """
@@ -15,5 +15,5 @@ if __name__ == '__main__':
 
     if args:
         formatter = MagicFormatter(args.text, args.width)
-        formatter.reformat_text('output_parte1.txt')
-        formatter.reformat_text('output_parte2.txt', True)
+        formatter.reformat_text('output-parte1.txt')
+        formatter.reformat_text('output-parte2.txt', True)

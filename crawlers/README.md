@@ -1,6 +1,7 @@
 # Testando o Desafio
 Siga os paços de inicialização e rode
 
+Garanta que você está no diretório do projeto.
 ## Inicializando
 Garanta que tenha python acima da versão 3 instalado em sua máquina e rode os seguintes comandos:
 

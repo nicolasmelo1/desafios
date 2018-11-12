@@ -1,18 +1,20 @@
 # Testando o Desafio
 Você pode tanto rodar no terminal como importanto `magic_formatter` em algum script python e criando um objeto do tipo `MagicFormatter`.
 
+Para usar no terminal, garanta que você está na pasta do projeto.
+
 ## Exemplos de teste:
 #### Terminal
 ```
-strings$ python main_strings.py example_text.txt 40
+$ python main_strings.py example_text.txt 40
 ```
 #### Importando
 ```python
 from magic_formatter import MagicFormatter
 
 formatter = MagicFormatter('PATH_FILE_NAME_OR_STRING', 'TEXT_WIDTH')
-formatter.reformat_text('output_parte1.txt')
-formatter.reformat_text('output_parte2.txt', True)
+formatter.reformat_text('output-parte1.txt')
+formatter.reformat_text('output-parte2.txt', True)
 ```
 
 # Desafio 1: Strings
