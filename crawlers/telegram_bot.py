@@ -68,8 +68,8 @@ class TelegramBot:
             if len(response) > 5:
                 for i in range(0, len(response), 5):
                     update.message.reply_text('\n    \n'.join(response[i:i+5]))
-
-            update.message.reply_text('\n    \n'.join(response))
+            else:
+                update.message.reply_text('\n    \n'.join(response))
         except (IndexError, ValueError):
             update.message.reply_text('Ops!! \nAlguma coisa deu errado. '
                                       'Tente novamente como no exemplo: \n'
