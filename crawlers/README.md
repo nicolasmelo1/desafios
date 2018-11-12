@@ -67,7 +67,7 @@ __Comandos__:
 
 + `/start` - Inicializa o Bot.
 + `/help` - Ajuda.
-+ `/config` - Mude o número minimo de votos para o post que você deseja visualizar.
++ `/config` - Mude o número minimo de votos para cada thread que você deseja visualizar.
 + `/nadaprafazer` - Encontre o que está bombando nos subreddits de sua escolha. 
 Ex.: /nadaprafazer cats;dogs;worldnews
 
