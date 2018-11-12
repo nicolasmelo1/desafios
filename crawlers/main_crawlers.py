@@ -1,30 +1,22 @@
 from argparse import ArgumentParser
 from mr_crawley import MrCrawley
+from telegram_bot import TelegramBot
 
 
 if __name__ == '__main__':
     parser = ArgumentParser()
+    parser.add_argument('--set', type=int, action='store', help='set minimum number of upvotes', required=False)
     parser.add_argument('--mine', type=str.lower, action='store',
                         help="insert each option divided by ';' to retrieve data",
                         required=False)
-    parser.add_argument('--telegram', action='store_true')
+    parser.add_argument('--telegram', action='store_true', help='start telegram bot, all other arguments are ignored, '
+                                                                'don\'t need to pass value')
     args = parser.parse_args()
 
     if args:
-        if args.telegram:
-            pass
         crawler = MrCrawley()
-        subreddits = args.mine.split(';')
-
-        print_result = '''
-Title: {0}
-Upvotes: {1}
-Subreddit: {2}
-Comments: {3}
-Thread: {4}
-        '''
-        for subreddit in subreddits:
-            response = crawler.whats_poppin(subreddit)
-            for data in response:
-                print(print_result.format(data['title'], data['upvotes'], data['subreddit'], data['comments'], data['thread']))
+        if args.telegram:
+            TelegramBot()
+        else:
+            print(crawler.mine(args.mine, args.set if args.set else 5000))
 

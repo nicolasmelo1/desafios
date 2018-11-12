@@ -1,3 +1,73 @@
+# Testando o Desafio
+Siga os paços de inicialização e rode
+
+## Inicializando
+Garanta que tenha python acima da versão 3 instalado em sua máquina e rode os seguintes comandos:
+
+
+Antes de mais nada precisamos criar um `virtual environment`, para isso usamos:
+#### Mac/Linux
+```
+$ python3 -m venv venv
+```
+```
+$ source venv/bin/activate
+```
+#### Windows
+```
+> pip install virtualenv
+```
+```
+> virtualenv venv
+```
+```
+> venv\Scripts\activate
+```
+Depois instalamos as dependencias presentes no `requirements.txt` na `venv` que acabamos de criar:
+
+```
+pip install -r requirements.txt
+```
+
+
+## Rodando o Script
+Tudo funciona através de um único arquivo, então tenha em mente os seguintes comandos
+
+__Dica__:
+ + Use `reddit_home` para descobrir o que está bombando na página principal do reddit
+ + Se você não setar um número minimo de upvotes, o valor padrão é `5000`
+### Terminal
+Exemplo:
+```
+$ python3 main_crawlers.py --mine "cats;worldnews" --set 5000
+```
+__Comandos__:
++ `--mine "<str>"` Use esse comando para descobrir o que está bombando nos subreddits de sua escolha, separados por `;` e entre `"`
++ `--set <int>` _Opicional_: Use esse comando para setar o número minimo de _upvotes_
+
+P.S.: `reddit_home` refere-se a página inicial do reddit. 
+
+Ou seja, `python3 main_crawlers.py --mine "reddit_home"` irá retornar as principais threads da página inicial do Reddit
+### Telegram
+Para Inicializar utilize o seguinte comando:
+```
+$ python3 main_crawlers.py --telegram
+```
+Você pode encontrar o bot procurando por `@mrcrawleybot` no telegram
+
+__Comandos__:
+
++ `/start` - Inicializa o Bot.
++ `/help` - Ajuda.
++ `/config` - Mude o número minimo de votos para o post que você deseja visualizar.
++ `/nadaprafazer` - Encontre o que está bombando nos subreddits de sua escolha. 
+Ex.: /nadaprafazer cats;dogs;worldnews
+
+P.S.: `reddit_home` refere-se a página inicial do reddit. 
+
+Ou seja, `/nadaprafazer reddit_home` irá retornar as principais threads da página inicial do Reddit
+
+
 # Desafio 2: Crawlers
 
 Parte do trabalho na IDwall inclui desenvolver *crawlers/scrapers* para coletar dados de websites.
